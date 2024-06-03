@@ -10,8 +10,8 @@ function divAdder(numSquaresPerSide) {
 
   for (let i = 0; i < totalSquares; i++) {
     const newDiv = document.createElement('div');
-    newDiv.style.width = `${squareSize}px`;
-    newDiv.style.height = `${squareSize}px`;
+    newDiv.style.width = `${squareSize-2}px`;
+    newDiv.style.height = `${squareSize-2}px`;
     newDiv.className = 'grid-item';
     firstDiv.appendChild(newDiv);
     divs.push(newDiv);
@@ -23,9 +23,18 @@ function divAdder(numSquaresPerSide) {
   });
 }
 
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 function handleMouseOver(event) {
   const div = event.target;
-  div.style.backgroundColor = 'black';
+  div.style.backgroundColor = getRandomColor();
 }
 
 function handleMouseOut(event) {

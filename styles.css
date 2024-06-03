@@ -7,5 +7,5 @@
     display: flex;
     flex-wrap: wrap;
     width: 500px; /* Set container size to 500px */
-    height: 500px; /* Set container size to 500px */
+    height: auto
   }
